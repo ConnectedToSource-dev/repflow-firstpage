@@ -39,7 +39,7 @@ export default function LandingHero() {
         {/* Main content — bottom left */}
         <div className="hero__content">
           <h1 className="hero__heading reveal">
-            Switch to <span className="hero__accent">Pure Water</span> &amp; enjoy Your Own Health
+            The Platform That Powers <span className="hero__accent">Pure Water</span> Sales
           </h1>
 
           <p className="hero__subtext reveal">
@@ -48,17 +48,17 @@ export default function LandingHero() {
             without a trace of contaminants.
           </p>
 
-          <div className="hero__actions reveal">
+          <div className="hero__actions">
             <Link to="/reps" className="hero__btn hero__btn--primary">
-              Get Started
+              Sign Up
               <span className="hero__btn-icon">
                 <ArrowRight size={16} weight="bold" />
               </span>
             </Link>
-            <Link to="/installers" className="hero__btn hero__btn--secondary">
+            <a href="#platform" className="hero__btn hero__btn--secondary">
               Learn More
               <ArrowRight size={16} weight="bold" />
-            </Link>
+            </a>
           </div>
         </div>
 
