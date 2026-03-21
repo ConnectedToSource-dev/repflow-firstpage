@@ -1,56 +1,41 @@
 /* Testimonials */
 .testimonials__header {
   max-width: 600px;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.testimonials__scroll {
-  overflow-x: auto;
-  margin: 0 calc(-1 * var(--space-6));
-  padding: 0 var(--space-6);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.testimonials__scroll::-webkit-scrollbar {
-  display: none;
-}
-
 @media (min-width: 768px) {
-  .testimonials__scroll {
-    margin: 0;
-    padding: 0;
-    overflow: visible;
+  .testimonials__header {
+    margin-bottom: var(--space-12);
   }
+}
+
+.testimonials__scroll {
+  overflow: visible;
 }
 
 .testimonials__track {
   display: flex;
-  gap: var(--space-6);
-  min-width: max-content;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
 @media (min-width: 768px) {
   .testimonials__track {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    min-width: unset;
+    gap: var(--space-6);
   }
 }
 
 .testimonials__card {
-  min-width: 300px;
-  flex-shrink: 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-  .testimonials__card {
-    min-width: unset;
-  }
-
   .testimonials__card:nth-child(4) {
     grid-column: 1 / 2;
   }
@@ -67,14 +52,23 @@
 .testimonials__card .card-core {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-4);
   height: 100%;
+  padding: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .testimonials__card .card-core {
+    gap: var(--space-5);
+    padding: var(--space-8);
+  }
 }
 
 .testimonials__card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-3);
 }
 
 .testimonials__badge {
@@ -84,6 +78,7 @@
   border-radius: var(--radius-full);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .testimonials__badge--rep {
@@ -98,10 +93,16 @@
 
 .testimonials__metric {
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-accent);
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .testimonials__metric {
+    font-size: var(--text-lg);
+  }
 }
 
 .testimonials__quote {
@@ -137,6 +138,7 @@
 .testimonials__author-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .testimonials__author-name {
@@ -149,4 +151,7 @@
 .testimonials__author-role {
   font-size: var(--text-xs);
   color: var(--color-text-tertiary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
