@@ -15,11 +15,12 @@ export default function ProductsOverview() {
             Premium Products
           </span>
           <h2 className="heading-section">
-            NSF-certified systems, 10-year warranty
+            Certified systems that sell themselves
           </h2>
           <p className="body-text">
-            Every system we sell is backed by a comprehensive warranty and
-            installed by certified professionals. Quality your customers trust.
+            Every system on the platform is NSF-certified, backed by a 10-year warranty,
+            and priced for strong margins. Your reps get products homeowners trust. Your
+            installers get hardware they already know how to work with.
           </p>
         </div>
 
@@ -41,6 +42,20 @@ export default function ProductsOverview() {
                       <li key={feat}>{feat}</li>
                     ))}
                   </ul>
+                  <div className="products__card-metrics">
+                    <div className="products__metric">
+                      <span className="products__metric-label">Avg sale price</span>
+                      <span className="products__metric-value">{product.metrics.salePrice}</span>
+                    </div>
+                    <div className="products__metric">
+                      <span className="products__metric-label">Rep commission</span>
+                      <span className="products__metric-value">{product.metrics.commission}</span>
+                    </div>
+                    <div className="products__metric">
+                      <span className="products__metric-label">Install time</span>
+                      <span className="products__metric-value">{product.metrics.installTime}</span>
+                    </div>
+                  </div>
                   <div className="products__card-warranty">
                     <ShieldCheck size={16} weight="fill" />
                     <span>{product.warranty} warranty</span>
