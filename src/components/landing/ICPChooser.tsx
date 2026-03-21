@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Buildings, Wrench } from '@phosphor-icons/react'
+import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import './ICPChooser.css'
 
@@ -49,9 +49,8 @@ export default function ICPChooser() {
         <div className="icp__grid reveal-stagger">
           {/* Left Card — Sales Companies */}
           <div className="icp__card reveal">
-            <div className="icp__card-image icp__card-image--sales">
-              <Buildings size={40} weight="duotone" />
-              <span>Image: Sales rep at the door</span>
+            <div className="icp__card-image">
+              <img src="/sales-rep.jpg" alt="Sales rep presenting to homeowners" />
             </div>
 
             <div className="icp__card-body">
@@ -92,9 +91,8 @@ export default function ICPChooser() {
 
           {/* Right Card — Installers */}
           <div className="icp__card reveal">
-            <div className="icp__card-image icp__card-image--installer">
-              <Wrench size={40} weight="duotone" />
-              <span>Image: Installer at work</span>
+            <div className="icp__card-image">
+              <img src="/installer.jpg" alt="Installer working on water purification system" />
             </div>
 
             <div className="icp__card-body">
