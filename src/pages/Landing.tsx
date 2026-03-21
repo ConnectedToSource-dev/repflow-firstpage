@@ -1,6 +1,5 @@
 import LandingHero from '../components/landing/LandingHero'
 import PlatformShowcase from '../components/landing/PlatformShowcase'
-import DualTrackHowItWorks from '../components/landing/DualTrackHowItWorks'
 import ICPChooser from '../components/landing/ICPChooser'
 import ProductsOverview from '../components/landing/ProductsOverview'
 import MoneyFlow from '../components/landing/MoneyFlow'
@@ -13,7 +12,6 @@ export default function Landing() {
     <>
       <LandingHero />
       <PlatformShowcase />
-      <DualTrackHowItWorks />
       <ICPChooser />
       <ProductsOverview />
       <MoneyFlow />
