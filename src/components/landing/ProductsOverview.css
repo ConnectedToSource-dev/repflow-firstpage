@@ -28,7 +28,7 @@
   .product__split {
     flex-direction: row;
     gap: var(--space-10);
-    align-items: start;
+    align-items: center;
   }
 }
 
@@ -41,8 +41,6 @@
   .product__showcase {
     width: 40%;
     flex-shrink: 0;
-    position: sticky;
-    top: calc(var(--nav-height) + var(--space-8));
   }
 }
 
