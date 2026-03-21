@@ -1,7 +1,7 @@
 /* ===================================================
    HomeBioHackers — Design System V2
    Vibe: Soft Structuralism (Health / Wellness)
-   Accent: Emerald
+   Accent: Indigo
    Typography: Outfit (display) + Plus Jakarta Sans (body)
    =================================================== */
 
@@ -13,23 +13,23 @@
 }
 
 :root {
-  /* Colors — Slate neutrals + Emerald accent */
+  /* Colors — Slate neutrals + Indigo accent */
   --color-bg: #fafbfc;
-  --color-bg-alt: #f1f3f5;
+  --color-bg-alt: #f0f0f5;
   --color-surface: #ffffff;
   --color-surface-elevated: #ffffff;
   --color-border: rgba(15, 23, 42, 0.06);
   --color-border-strong: rgba(15, 23, 42, 0.1);
 
-  --color-text-primary: #0f172a;
+  --color-text-primary: #1e1b4b;
   --color-text-secondary: #475569;
   --color-text-tertiary: #94a3b8;
   --color-text-inverse: #ffffff;
 
-  --color-accent: #059669;
-  --color-accent-light: #d1fae5;
-  --color-accent-dark: #047857;
-  --color-accent-muted: rgba(5, 150, 105, 0.08);
+  --color-accent: #6366f1;
+  --color-accent-light: #e0e7ff;
+  --color-accent-dark: #4f46e5;
+  --color-accent-muted: rgba(99, 102, 241, 0.08);
 
   /* Typography */
   --font-display: 'Outfit', system-ui, sans-serif;
