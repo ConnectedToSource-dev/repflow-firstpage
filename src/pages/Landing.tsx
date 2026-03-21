@@ -3,6 +3,7 @@ import PlatformShowcase from '../components/landing/PlatformShowcase'
 import DualTrackHowItWorks from '../components/landing/DualTrackHowItWorks'
 import ICPChooser from '../components/landing/ICPChooser'
 import ProductsOverview from '../components/landing/ProductsOverview'
+import MoneyFlow from '../components/landing/MoneyFlow'
 import LandingTestimonials from '../components/landing/LandingTestimonials'
 import LandingFAQ from '../components/landing/LandingFAQ'
 import LandingCTA from '../components/landing/LandingCTA'
@@ -15,6 +16,7 @@ export default function Landing() {
       <DualTrackHowItWorks />
       <ICPChooser />
       <ProductsOverview />
+      <MoneyFlow />
       <LandingTestimonials />
       <LandingFAQ />
       <LandingCTA />

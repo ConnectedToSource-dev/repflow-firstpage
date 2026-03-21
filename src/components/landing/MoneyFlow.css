@@ -1,0 +1,198 @@
+/* Money Flow Section */
+.money-flow__header {
+  max-width: 600px;
+  margin-bottom: var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .money-flow__header {
+    margin-bottom: var(--space-12);
+  }
+}
+
+/* Steps container */
+.money-flow__steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .money-flow__steps {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.money-flow__step-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .money-flow__step-group {
+    flex-direction: row;
+    flex: 1;
+    gap: 0;
+  }
+}
+
+/* Individual step card */
+.money-flow__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .money-flow__card {
+    flex: 1;
+    padding: var(--space-8) var(--space-4);
+  }
+}
+
+.money-flow__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+}
+
+.money-flow__number {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .money-flow__number {
+    font-size: var(--text-3xl);
+  }
+}
+
+.money-flow__number--accent {
+  color: var(--color-accent);
+}
+
+.money-flow__detail {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Arrows between steps */
+.money-flow__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-border-strong);
+  flex-shrink: 0;
+  padding: var(--space-1) 0;
+}
+
+@media (min-width: 768px) {
+  .money-flow__arrow {
+    padding: 0 var(--space-3);
+  }
+}
+
+.money-flow__arrow-h {
+  display: none;
+}
+
+.money-flow__arrow-v {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .money-flow__arrow-h {
+    display: block;
+  }
+
+  .money-flow__arrow-v {
+    display: none;
+  }
+}
+
+/* Closing line */
+.money-flow__closing {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin: var(--space-10) auto 0;
+}
+
+@media (min-width: 768px) {
+  .money-flow__closing {
+    font-size: var(--text-base);
+    margin-top: var(--space-12);
+  }
+}
+
+/* Stat callouts */
+.money-flow__callouts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .money-flow__callouts {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+  }
+}
+
+.money-flow__callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--color-accent-muted);
+  border-radius: var(--radius-xl);
+}
+
+.money-flow__callout-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 768px) {
+  .money-flow__callout-number {
+    font-size: var(--text-4xl);
+  }
+}
+
+.money-flow__callout-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 30ch;
+}
