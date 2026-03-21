@@ -9,12 +9,12 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-4);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-12);
 }
 
 @media (min-width: 768px) {
   .icp__header {
-    margin-bottom: var(--space-14);
+    margin-bottom: var(--space-16);
   }
 }
 
