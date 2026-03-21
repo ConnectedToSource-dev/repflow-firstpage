@@ -5,21 +5,21 @@ import './PlatformShowcase.css'
 const panels = [
   {
     icon: ChartLineUp,
-    title: 'Rep Dashboard',
-    description: 'Proposals, pipeline tracking, earnings, and client management — everything your sales team needs in one place.',
-    features: ['Proposal generator', 'Milestone tracking', 'Real-time earnings'],
+    title: 'Sales Dashboard',
+    description: 'Submit deals, track commissions, and monitor your team\u2019s performance \u2014 all in real time.',
+    features: ['Submit new sales in under 2 minutes', 'Live commission tracking: pending, confirmed, paid', 'Team leaderboard and rep performance metrics'],
   },
   {
     icon: GraduationCap,
     title: 'Onboarding Academy',
-    description: 'Five focused modules that take your reps from zero to certified in about one hour. Quizzes, materials, and certification included.',
-    features: ['5 training modules', 'Knowledge quizzes', 'Digital certification'],
+    description: 'Your reps go from zero to sell-ready in under one hour. Scripts, product training, and pricing tools \u2014 all included.',
+    features: ['Complete training in under 60 minutes', 'Sales scripts and objection-handling guides', 'Product knowledge and pricing calculator'],
   },
   {
     icon: CalendarCheck,
     title: 'Installer Hub',
-    description: 'Pre-sold job cards, scheduling, customer details, and real-time updates. Installers see everything before they load the truck.',
-    features: ['Job dashboard', 'Schedule management', 'Customer details'],
+    description: 'Incoming jobs land in your feed. Accept, schedule, and get paid \u2014 all without picking up the phone.',
+    features: ['Pre-sold jobs delivered to your dashboard', 'Accept or decline with one tap', 'Built-in scheduling, territory map, and payment tracking'],
   },
 ]
 
@@ -32,11 +32,12 @@ export default function PlatformShowcase() {
         <div className="platform-showcase__header reveal">
           <span className="eyebrow">Built for Scale</span>
           <h2 className="heading-section">
-            A real platform, not just a landing page
+            Built for the people who sell and install water systems
           </h2>
           <p className="body-text">
-            RepFlow powers every step — from training and certification through
-            deal tracking and installation scheduling.
+            HomeBioHackers is a software platform that powers the entire water purification
+            sales cycle — from the moment a rep closes a deal at the door to the moment an
+            installer completes the job. Two dashboards, one connected workflow.
           </p>
         </div>
 
