@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Drop, Buildings, Wrench } from '@phosphor-icons/react'
+import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import './LandingHero.css'
 
@@ -7,92 +7,77 @@ export default function LandingHero() {
   const ref = useScrollReveal()
 
   return (
-    <section className="landing-hero" ref={ref}>
-      <div className="container">
-        <div className="landing-hero__grid">
-          <div className="landing-hero__content">
-            <div className="reveal">
-              <span className="eyebrow">
-                <Drop weight="fill" size={12} />
-                The Water Purification Marketplace
-              </span>
-            </div>
+    <section className="hero" ref={ref}>
+      {/* Dark gradient overlay */}
+      <div className="hero__overlay" />
 
-            <h1 className="heading-display xl reveal">
-              One platform.<br />
-              Two ways to grow.
-            </h1>
-
-            <p className="body-text reveal">
-              HomeBioHackers connects sales teams with certified installers
-              to deliver premium water purification to every home in America.
-              Whether you sell or install, there's a place for you.
-            </p>
-
-            <div className="landing-hero__actions reveal">
-              <Link to="/reps" className="btn-primary">
-                I sell to homeowners
-                <span className="btn-icon">
-                  <Buildings size={16} weight="bold" />
-                </span>
-              </Link>
-              <Link to="/installers" className="btn-secondary">
-                <Wrench size={16} weight="bold" />
-                I install water systems
-              </Link>
-            </div>
+      <div className="container hero__container">
+        {/* Floating stats card — top right */}
+        <div className="hero__stats-card reveal">
+          <div className="hero__stats-header">
+            <span className="hero__stats-number">38,400+</span>
+            <span className="hero__stats-badge">last 5 years</span>
           </div>
-
-          <div className="landing-hero__visual reveal">
-            <div className="landing-hero__dashboard">
-              <div className="landing-hero__dashboard-shell">
-                <div className="landing-hero__dashboard-core">
-                  <div className="landing-hero__dash-header">
-                    <div className="landing-hero__dash-dots">
-                      <span></span><span></span><span></span>
-                    </div>
-                    <span className="landing-hero__dash-title">RepFlow Dashboard</span>
-                  </div>
-                  <div className="landing-hero__dash-body">
-                    <div className="landing-hero__dash-metric">
-                      <span className="landing-hero__dash-metric-label">This Month</span>
-                      <span className="landing-hero__dash-metric-value">$12,400</span>
-                    </div>
-                    <div className="landing-hero__dash-metric">
-                      <span className="landing-hero__dash-metric-label">Active Deals</span>
-                      <span className="landing-hero__dash-metric-value">7</span>
-                    </div>
-                    <div className="landing-hero__dash-metric">
-                      <span className="landing-hero__dash-metric-label">Installs Scheduled</span>
-                      <span className="landing-hero__dash-metric-value">4</span>
-                    </div>
-                    <div className="landing-hero__dash-bars">
-                      <div className="landing-hero__dash-bar" style={{ '--bar-width': '85%' } as React.CSSProperties}></div>
-                      <div className="landing-hero__dash-bar" style={{ '--bar-width': '62%' } as React.CSSProperties}></div>
-                      <div className="landing-hero__dash-bar" style={{ '--bar-width': '94%' } as React.CSSProperties}></div>
-                      <div className="landing-hero__dash-bar" style={{ '--bar-width': '47%' } as React.CSSProperties}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <span className="hero__stats-subtitle">Successful System Installs</span>
+          <div className="hero__stats-bars">
+            <div className="hero__bar" style={{ '--h': '30%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '45%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '35%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '55%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '70%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '60%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '85%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '90%' } as React.CSSProperties} />
+            <div className="hero__bar" style={{ '--h': '100%' } as React.CSSProperties} />
+          </div>
+          <div className="hero__stats-axis">
+            <span>2020</span>
+            <span>2025</span>
           </div>
         </div>
 
-        <div className="landing-hero__stats reveal">
-          <div className="landing-hero__stat">
-            <span className="landing-hero__stat-value">1,247+</span>
-            <span className="landing-hero__stat-label">Certified Partners</span>
+        {/* Main content — bottom left */}
+        <div className="hero__content">
+          <h1 className="hero__heading reveal">
+            Switch to <span className="hero__accent">Pure Water</span> &amp; enjoy Your Own Health
+          </h1>
+
+          <p className="hero__subtext reveal">
+            At HomeBioHackers, we connect sales teams with certified installers
+            to deliver premium water purification to every home — pure water,
+            without a trace of contaminants.
+          </p>
+
+          <div className="hero__actions reveal">
+            <Link to="/reps" className="hero__btn hero__btn--primary">
+              Get Started
+              <span className="hero__btn-icon">
+                <ArrowRight size={16} weight="bold" />
+              </span>
+            </Link>
+            <Link to="/installers" className="hero__btn hero__btn--secondary">
+              Learn More
+              <ArrowRight size={16} weight="bold" />
+            </Link>
           </div>
-          <div className="landing-hero__stat-divider"></div>
-          <div className="landing-hero__stat">
-            <span className="landing-hero__stat-value">38.4k</span>
-            <span className="landing-hero__stat-label">Systems Installed</span>
+        </div>
+
+        {/* Trust badge — bottom right */}
+        <div className="hero__trust reveal">
+          <div className="hero__trust-stars">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#84cc16">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            ))}
           </div>
-          <div className="landing-hero__stat-divider"></div>
-          <div className="landing-hero__stat">
-            <span className="landing-hero__stat-value">50</span>
-            <span className="landing-hero__stat-label">States Covered</span>
+          <span className="hero__trust-text">
+            <strong>1,247</strong> partners trust us
+          </span>
+          <div className="hero__trust-avatars">
+            <div className="hero__avatar" style={{ '--bg': '#059669' } as React.CSSProperties}>JD</div>
+            <div className="hero__avatar" style={{ '--bg': '#0284c7' } as React.CSSProperties}>MK</div>
+            <div className="hero__avatar" style={{ '--bg': '#7c3aed' } as React.CSSProperties}>SR</div>
           </div>
         </div>
       </div>
