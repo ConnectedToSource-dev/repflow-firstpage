@@ -1,0 +1,104 @@
+/* Products Overview */
+.products {
+  background: var(--color-bg-alt);
+}
+
+.products__header {
+  max-width: 600px;
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .products__header {
+    margin-bottom: var(--space-16);
+  }
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .products__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .products__card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.products__card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.products__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+}
+
+.products__card-type {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.products__card-name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.products__card-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.products__card-features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.products__card-features li {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-accent-dark);
+  background: var(--color-accent-muted);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.products__card-warranty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}

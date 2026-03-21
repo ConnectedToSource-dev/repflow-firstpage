@@ -1,0 +1,118 @@
+/* ICP Chooser */
+.icp-chooser__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.icp-chooser__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .icp-chooser__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.icp-chooser__card {
+  display: block;
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.icp-chooser__card:hover {
+  transform: translateY(-4px);
+}
+
+.icp-chooser__card:hover .card-shell {
+  box-shadow: var(--shadow-lg);
+}
+
+.icp-chooser__card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-height: 340px;
+}
+
+.icp-chooser__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-xl);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+}
+
+.icp-chooser__card-icon--dark {
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--color-text-primary);
+}
+
+.icp-chooser__card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.icp-chooser__card-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.icp-chooser__card-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.icp-chooser__card-bullets li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.icp-chooser__card-bullets li svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.icp-chooser__card-inner--installers .icp-chooser__card-bullets li svg {
+  color: var(--color-text-secondary);
+}
+
+.icp-chooser__card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: var(--space-4);
+  transition: gap var(--duration-normal) var(--ease-spring);
+}
+
+.icp-chooser__card:hover .icp-chooser__card-cta {
+  gap: var(--space-3);
+}
+
+.icp-chooser__card-inner--installers .icp-chooser__card-cta {
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,97 @@
+/* Platform Showcase */
+.platform-showcase__header {
+  max-width: 600px;
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .platform-showcase__header {
+    margin-bottom: var(--space-16);
+  }
+}
+
+.platform-showcase__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .platform-showcase__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .platform-showcase__panel:first-child {
+    grid-row: 1 / 3;
+  }
+}
+
+.platform-showcase__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+}
+
+.platform-showcase__panel-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.platform-showcase__panel-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.platform-showcase__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.platform-showcase__features li {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  padding-left: var(--space-5);
+  position: relative;
+}
+
+.platform-showcase__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+
+/* Make first panel taller with more content on desktop */
+@media (min-width: 768px) {
+  .platform-showcase__panel:first-child .card-core {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .platform-showcase__panel:first-child .platform-showcase__panel-desc {
+    flex: 1;
+  }
+}
