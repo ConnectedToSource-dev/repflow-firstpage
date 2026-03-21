@@ -1,117 +1,115 @@
-/* Products Overview */
-.products {
+/* Product Section — Single product + homeowner impact */
+.product {
   background: var(--color-bg-alt);
 }
 
-.products__header {
+.product__header {
   max-width: 600px;
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
 @media (min-width: 768px) {
-  .products__header {
-    margin-bottom: var(--space-16);
+  .product__header {
+    margin-bottom: var(--space-12);
   }
 }
 
-.products__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
+/* Two-column split */
+.product__split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
 }
 
 @media (min-width: 768px) {
-  .products__grid {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .products__card:last-child {
-    grid-column: 1 / -1;
+  .product__split {
+    flex-direction: row;
+    gap: var(--space-10);
+    align-items: start;
   }
 }
 
-.products__card-top {
+/* Left column — Product showcase */
+.product__showcase {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .product__showcase {
+    width: 40%;
+    flex-shrink: 0;
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-8));
+  }
+}
+
+.product__showcase-inner {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-4);
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
-.products__card-icon {
+.product__showcase-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-lg);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-xl);
   background: var(--color-accent-muted);
   color: var(--color-accent);
 }
 
-.products__card-type {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--color-text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.products__card-name {
+.product__name {
   font-family: var(--font-display);
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--color-text-primary);
-  letter-spacing: -0.01em;
-  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
 }
 
-.products__card-desc {
+@media (min-width: 768px) {
+  .product__name {
+    font-size: var(--text-3xl);
+  }
+}
+
+.product__tagline {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
-  margin-bottom: var(--space-5);
 }
 
-.products__card-features {
-  list-style: none;
+.product__certs {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-5);
-}
-
-.products__card-features li {
   font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--color-accent-dark);
+  font-weight: 600;
+  color: var(--color-accent);
+  padding: var(--space-3) var(--space-4);
   background: var(--color-accent-muted);
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-}
-
-/* Business metrics row */
-.products__card-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-3);
-  padding: var(--space-4);
-  background: var(--color-bg-alt);
   border-radius: var(--radius-md);
-  margin-bottom: var(--space-5);
 }
 
-.products__metric {
+.product__metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.product__metric {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-1);
-  text-align: center;
 }
 
-.products__metric-label {
+.product__metric-label {
   font-size: 0.625rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -119,27 +117,96 @@
   color: var(--color-text-tertiary);
 }
 
-.products__metric-value {
+.product__metric-value {
   font-family: var(--font-display);
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-accent);
   letter-spacing: -0.02em;
 }
 
-@media (min-width: 768px) {
-  .products__metric-value {
-    font-size: var(--text-lg);
+/* Right column — Benefits grid */
+.product__benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .product__benefits {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.products__card-warranty {
+@media (min-width: 768px) {
+  .product__benefits {
+    width: 60%;
+    gap: var(--space-6);
+  }
+}
+
+.product__benefit {
+  display: flex;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.product__benefit-icon {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   color: var(--color-accent);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.product__benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.product__benefit-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.product__benefit-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .product__benefit-title {
+    font-size: var(--text-base);
+  }
+
+  .product__benefit-text {
+    font-size: var(--text-sm);
+  }
+}
+
+/* Closing line */
+.product__closing {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin: var(--space-10) auto 0;
+}
+
+@media (min-width: 768px) {
+  .product__closing {
+    font-size: var(--text-base);
+    margin-top: var(--space-12);
+  }
 }
