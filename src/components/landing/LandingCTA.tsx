@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
 import { Buildings, Wrench } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
+import { useModal } from '../../context/ModalContext'
 import './LandingCTA.css'
 
 export default function LandingCTA() {
   const ref = useScrollReveal()
+  const { openModal } = useModal()
 
   return (
     <section className="landing-cta section" ref={ref}>
@@ -20,16 +21,16 @@ export default function LandingCTA() {
                 through HomeBioHackers. Free to apply — we review every application personally.
               </p>
               <div className="landing-cta__actions">
-                <Link to="/reps" className="btn-primary">
+                <button type="button" className="btn-primary" onClick={() => openModal('sales')}>
                   Apply as a Sales Partner
                   <span className="btn-icon">
                     <Buildings size={16} weight="bold" />
                   </span>
-                </Link>
-                <Link to="/installers" className="btn-secondary">
+                </button>
+                <button type="button" className="btn-secondary" onClick={() => openModal('installer')}>
                   <Wrench size={16} weight="bold" />
                   Apply as an Installer
-                </Link>
+                </button>
               </div>
             </div>
           </div>
