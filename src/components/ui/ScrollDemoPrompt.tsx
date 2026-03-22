@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { useLocation } from 'react-router-dom'
 import { Play, X } from '@phosphor-icons/react'
 import { useModal } from '../../context/ModalContext'
 import './ScrollDemoPrompt.css'
@@ -8,18 +9,27 @@ export default function ScrollDemoPrompt() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const { openVideo } = useModal()
+  const { pathname } = useLocation()
 
   useEffect(() => {
+    if (pathname !== '/') return
     const handler = () => {
       if (dismissed) return
-      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight
+      if (scrollable <= 0) return
+      const scrollPercent = window.scrollY / scrollable
       if (scrollPercent >= 0.7) {
         setVisible(true)
       }
     }
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
-  }, [dismissed])
+  }, [dismissed, pathname])
+
+  // Hide when navigating away from landing
+  useEffect(() => {
+    if (pathname !== '/') setVisible(false)
+  }, [pathname])
 
   const handleDismiss = () => {
     setDismissed(true)
