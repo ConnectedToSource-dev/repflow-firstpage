@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Drop } from '@phosphor-icons/react'
+import { useModal } from '../../context/ModalContext'
 import './Footer.css'
 
 export default function Footer() {
+  const { openModal } = useModal()
   return (
     <footer className="footer">
       <div className="container">
@@ -27,8 +29,8 @@ export default function Footer() {
 
           <div className="footer__links-group">
             <h4 className="footer__links-title">Partners</h4>
-            <Link to="/reps" className="footer__link">For Sales Teams</Link>
-            <Link to="/installers" className="footer__link">For Installers</Link>
+            <button type="button" className="footer__link footer__link--btn" onClick={() => openModal('sales')}>Apply as a Sales Partner</button>
+            <button type="button" className="footer__link footer__link--btn" onClick={() => openModal('installer')}>Apply as an Installer</button>
             <a href="#faq" className="footer__link">FAQ</a>
           </div>
 

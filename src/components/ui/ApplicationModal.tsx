@@ -42,6 +42,8 @@ export default function ApplicationModal({ variant, onClose }: Props) {
     countryCode: '+1',
     phone: '',
     company: '',
+    salesReps: '',
+    installCapacity: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitting, setSubmitting] = useState(false)
@@ -102,6 +104,8 @@ export default function ApplicationModal({ variant, onClose }: Props) {
     if (!form.phone.trim()) errs.phone = 'Phone number is required'
     else if (!/^\d{7,15}$/.test(form.phone.replace(/\s/g, ''))) errs.phone = 'Enter a valid phone number'
     if (!form.company.trim()) errs.company = 'Company is required'
+    if (variant === 'sales' && !form.salesReps) errs.salesReps = 'Please select a range'
+    if (variant === 'installer' && !form.installCapacity) errs.installCapacity = 'Please select a range'
     return errs
   }
 
@@ -121,6 +125,8 @@ export default function ApplicationModal({ variant, onClose }: Props) {
         phone_country_code: form.countryCode,
         phone_number: form.phone.replace(/\s/g, ''),
         company: form.company.trim(),
+        ...(variant === 'sales' && { active_sales_reps: form.salesReps }),
+        ...(variant === 'installer' && { weekly_install_capacity: form.installCapacity }),
       })
       setSuccess(true)
       setTimeout(onClose, 2000)
@@ -237,6 +243,45 @@ export default function ApplicationModal({ variant, onClose }: Props) {
                 />
                 {errors.company && <span className="modal__error">{errors.company}</span>}
               </div>
+
+              {variant === 'sales' && (
+                <div className="modal__field">
+                  <label className="modal__label" htmlFor="salesReps">Active sales reps</label>
+                  <select
+                    id="salesReps"
+                    className={`modal__input modal__select ${errors.salesReps ? 'modal__input--error' : ''}`}
+                    value={form.salesReps}
+                    onChange={e => update('salesReps', e.target.value)}
+                  >
+                    <option value="">Select range</option>
+                    <option value="1-10">1-10</option>
+                    <option value="10-25">10-25</option>
+                    <option value="25-50">25-50</option>
+                    <option value="50-100">50-100</option>
+                    <option value="100+">100+</option>
+                  </select>
+                  {errors.salesReps && <span className="modal__error">{errors.salesReps}</span>}
+                </div>
+              )}
+
+              {variant === 'installer' && (
+                <div className="modal__field">
+                  <label className="modal__label" htmlFor="installCapacity">Weekly installation capacity</label>
+                  <select
+                    id="installCapacity"
+                    className={`modal__input modal__select ${errors.installCapacity ? 'modal__input--error' : ''}`}
+                    value={form.installCapacity}
+                    onChange={e => update('installCapacity', e.target.value)}
+                  >
+                    <option value="">Select range</option>
+                    <option value="1-4">1-4</option>
+                    <option value="4-10">4-10</option>
+                    <option value="10-25">10-25</option>
+                    <option value="25+">25+</option>
+                  </select>
+                  {errors.installCapacity && <span className="modal__error">{errors.installCapacity}</span>}
+                </div>
+              )}
 
               {errors.submit && <span className="modal__error">{errors.submit}</span>}
 
