@@ -7,12 +7,11 @@ import './ScrollDemoPrompt.css'
 export default function ScrollDemoPrompt() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
-  const [hasClicked, setHasClicked] = useState(false)
   const { openVideo } = useModal()
 
   useEffect(() => {
     const handler = () => {
-      if (dismissed || hasClicked) return
+      if (dismissed) return
       const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
       if (scrollPercent >= 0.7) {
         setVisible(true)
@@ -20,20 +19,7 @@ export default function ScrollDemoPrompt() {
     }
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
-  }, [dismissed, hasClicked])
-
-  // Track if user has clicked any CTA on the page
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.closest('a[href], button')) {
-        setHasClicked(true)
-        setVisible(false)
-      }
-    }
-    document.addEventListener('click', handler, true)
-    return () => document.removeEventListener('click', handler, true)
-  }, [])
+  }, [dismissed])
 
   const handleDismiss = () => {
     setDismissed(true)
@@ -41,9 +27,9 @@ export default function ScrollDemoPrompt() {
   }
 
   const handleWatch = () => {
+    openVideo()
     setDismissed(true)
     setVisible(false)
-    openVideo()
   }
 
   if (!visible) return null
