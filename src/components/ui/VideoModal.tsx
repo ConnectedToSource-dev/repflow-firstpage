@@ -31,7 +31,7 @@ export default function VideoModal({ onClose }: Props) {
         </button>
         <div className="video-modal__embed">
           <iframe
-            src="https://www.youtube.com/embed/-x2rbkEjjsU?autoplay=1&rel=0"
+            src="https://www.youtube.com/embed/-x2rbkEjjsU?start=2&autoplay=1&rel=0"
             title="HomeBioHackers Demo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
