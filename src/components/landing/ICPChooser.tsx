@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
+import { useModal } from '../../context/ModalContext'
 import './ICPChooser.css'
 
 const salesSteps = [
@@ -33,6 +33,7 @@ const installerBenefits = [
 
 export default function ICPChooser() {
   const ref = useScrollReveal()
+  const { openModal } = useModal()
 
   return (
     <section className="icp section" id="partners" ref={ref}>
@@ -83,9 +84,9 @@ export default function ICPChooser() {
                 ))}
               </ul>
 
-              <Link to="/reps" className="icp__cta">
+              <button type="button" className="icp__cta" onClick={() => openModal('sales')}>
                 Apply as a sales partner <ArrowRight size={16} weight="bold" />
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -125,9 +126,9 @@ export default function ICPChooser() {
                 ))}
               </ul>
 
-              <Link to="/installers" className="icp__cta">
+              <button type="button" className="icp__cta" onClick={() => openModal('installer')}>
                 Apply as an installer <ArrowRight size={16} weight="bold" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

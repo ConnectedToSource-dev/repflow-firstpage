@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import './LandingHero.css'
@@ -49,12 +48,12 @@ export default function LandingHero() {
           </p>
 
           <div className="hero__actions">
-            <Link to="/reps" className="hero__btn hero__btn--primary">
-              Sign Up
+            <a href="#platform" className="hero__btn hero__btn--primary">
+              Show Demo
               <span className="hero__btn-icon">
                 <ArrowRight size={16} weight="bold" />
               </span>
-            </Link>
+            </a>
             <a href="#platform" className="hero__btn hero__btn--secondary">
               Learn More
               <ArrowRight size={16} weight="bold" />

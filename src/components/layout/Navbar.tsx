@@ -44,9 +44,9 @@ export default function Navbar() {
             <Link to="/installers" className="navbar__link">For Installers</Link>
           </div>
 
-          <Link to="/reps" className="navbar__cta">
-            Sign Up
-          </Link>
+          <a href="#platform" className="navbar__cta">
+            Show Demo
+          </a>
 
           <button
             className="navbar__hamburger"
@@ -64,7 +64,7 @@ export default function Navbar() {
           <a href="#platform" className="mobile-menu__link" style={{ '--delay': '0' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>Platform</a>
           <Link to="/reps" className="mobile-menu__link" style={{ '--delay': '1' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>For Sales Teams</Link>
           <Link to="/installers" className="mobile-menu__link" style={{ '--delay': '2' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>For Installers</Link>
-          <Link to="/reps" className="mobile-menu__link mobile-menu__link--cta" style={{ '--delay': '3' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>Sign Up</Link>
+          <a href="#platform" className="mobile-menu__link mobile-menu__link--cta" style={{ '--delay': '3' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>Show Demo</a>
         </div>
       </div>
     </>
