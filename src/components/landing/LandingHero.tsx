@@ -1,5 +1,6 @@
 import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
+import WaterShader from '../ui/WaterShader'
 
 import './LandingHero.css'
 
@@ -8,6 +9,7 @@ export default function LandingHero() {
 
   return (
     <section className="hero" ref={ref}>
+      <WaterShader />
       {/* Dark gradient overlay */}
       <div className="hero__overlay" />
 

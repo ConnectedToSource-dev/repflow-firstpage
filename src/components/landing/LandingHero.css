@@ -10,11 +10,19 @@
   align-items: flex-end;
   padding: var(--nav-height) 0 0;
   overflow: hidden;
+  background: #0f0d28;
+}
 
-  /* Background image — replace URL with your own hero photo */
-  background:
-    url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=2000&q=80')
-    center / cover no-repeat;
+.hero__water-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__water-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero__overlay {
