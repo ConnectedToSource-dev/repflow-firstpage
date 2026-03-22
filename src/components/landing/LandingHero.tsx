@@ -1,9 +1,11 @@
 import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
+import { useModal } from '../../context/ModalContext'
 import './LandingHero.css'
 
 export default function LandingHero() {
   const ref = useScrollReveal()
+  const { openVideo } = useModal()
 
   return (
     <section className="hero" ref={ref}>
@@ -48,12 +50,12 @@ export default function LandingHero() {
           </p>
 
           <div className="hero__actions">
-            <a href="#platform" className="hero__btn hero__btn--primary">
+            <button className="hero__btn hero__btn--primary" onClick={openVideo}>
               Show Demo
               <span className="hero__btn-icon">
                 <ArrowRight size={16} weight="bold" />
               </span>
-            </a>
+            </button>
             <a href="#platform" className="hero__btn hero__btn--secondary">
               Learn More
               <ArrowRight size={16} weight="bold" />

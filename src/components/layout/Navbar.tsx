@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { List, X, Drop } from '@phosphor-icons/react'
+import { useModal } from '../../context/ModalContext'
 import './Navbar.css'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const { openVideo } = useModal()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,9 +46,9 @@ export default function Navbar() {
             <Link to="/installers" className="navbar__link">For Installers</Link>
           </div>
 
-          <a href="#platform" className="navbar__cta">
+          <button className="navbar__cta" onClick={openVideo}>
             Show Demo
-          </a>
+          </button>
 
           <button
             className="navbar__hamburger"
@@ -64,7 +66,7 @@ export default function Navbar() {
           <a href="#platform" className="mobile-menu__link" style={{ '--delay': '0' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>Platform</a>
           <Link to="/reps" className="mobile-menu__link" style={{ '--delay': '1' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>For Sales Teams</Link>
           <Link to="/installers" className="mobile-menu__link" style={{ '--delay': '2' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>For Installers</Link>
-          <a href="#platform" className="mobile-menu__link mobile-menu__link--cta" style={{ '--delay': '3' } as React.CSSProperties} onClick={() => setMenuOpen(false)}>Show Demo</a>
+          <button className="mobile-menu__link mobile-menu__link--cta" style={{ '--delay': '3' } as React.CSSProperties} onClick={() => { openVideo(); setMenuOpen(false) }}>Show Demo</button>
         </div>
       </div>
     </>
