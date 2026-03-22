@@ -5,7 +5,7 @@ import './MoneyFlow.css'
 const steps = [
   { label: 'Homeowner pays', number: '$8,000', detail: 'Average system price', accent: true },
   { label: 'Sales rep earns', number: '$3,000+', detail: 'Commission per sale', accent: true },
-  { label: 'Installer earns', number: 'Their standard rate', detail: 'Margins stay untouched', accent: false },
+  { label: 'Installer earns', number: 'Full rate', detail: 'Margins stay untouched', accent: false },
   { label: 'Platform handles', number: 'Everything else', detail: 'Matching, training, payments', accent: false },
 ]
 

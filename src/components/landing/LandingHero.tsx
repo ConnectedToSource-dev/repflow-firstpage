@@ -1,11 +1,10 @@
 import { ArrowRight } from '@phosphor-icons/react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { useModal } from '../../context/ModalContext'
+
 import './LandingHero.css'
 
 export default function LandingHero() {
   const ref = useScrollReveal()
-  const { openVideo } = useModal()
 
   return (
     <section className="hero" ref={ref}>
@@ -44,20 +43,19 @@ export default function LandingHero() {
           </h1>
 
           <p className="hero__subtext reveal">
-            At HomeBioHackers, we connect sales teams with certified installers
-            to deliver premium water purification to every home — pure water,
-            without a trace of contaminants.
+            Stop losing deals to scheduling chaos. Close more installs with
+            automated proposals, instant booking, and a certified installer network.
           </p>
 
           <div className="hero__actions">
-            <button className="hero__btn hero__btn--primary" onClick={openVideo}>
-              Show Demo
+            <a href="#partners" className="hero__btn hero__btn--primary">
+              I have Sales Reps
               <span className="hero__btn-icon">
                 <ArrowRight size={16} weight="bold" />
               </span>
-            </button>
-            <a href="#platform" className="hero__btn hero__btn--secondary">
-              Learn More
+            </a>
+            <a href="#partners" className="hero__btn hero__btn--secondary">
+              I'm an Installer
               <ArrowRight size={16} weight="bold" />
             </a>
           </div>

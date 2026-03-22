@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
 import ApplicationModal from '../components/ui/ApplicationModal'
 import VideoModal from '../components/ui/VideoModal'
+import ScrollDemoPrompt from '../components/ui/ScrollDemoPrompt'
 
 type ModalVariant = 'sales' | 'installer' | null
 
@@ -31,6 +32,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       {videoOpen && (
         <VideoModal onClose={closeVideo} />
       )}
+      <ScrollDemoPrompt />
     </ModalContext.Provider>
   )
 }
