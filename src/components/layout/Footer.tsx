@@ -38,7 +38,7 @@ export default function Footer() {
             <h4 className="footer__links-title">Company</h4>
             <a href="#" className="footer__link">About</a>
             <a href="#" className="footer__link">Contact</a>
-            <a href="#" className="footer__link">Privacy Policy</a>
+            <Link to="/privacy" className="footer__link">Privacy Policy</Link>
           </div>
         </div>
 
